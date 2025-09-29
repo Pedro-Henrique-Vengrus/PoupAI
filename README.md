@@ -40,50 +40,6 @@ Banco de Dados
 
 PostgreSQL
 
-🗂️ Estrutura (resumo)
-/poupai
-  ├─ app_expo_poupai/                 # App Expo
-  │   ├─ app/                  # Telas (login, register, home, transactions, goals)
-  │   └─ src/
-  │       └─lib/
-  │           ├─ api.ts        # Axios baseURL
-  │       └─ services/
-  │           ├─ dashboard.ts  # Resumo / Gastos por categoria
-  │           ├─ despesa.ts   # Despesas (get/create/alterar/remover)
-  │           ├─ meta.ts      # Metas (get/create/alterar/remover)
-  │           └─ transacao.ts  # Últimas transações
-  └─ backend/
-      └─ PoupAi_Backend/       # API ASP.NET Core
-          ├─Api.Comum
-            ├─ Categoria.cs
-            └─ Despesa.cs
-            └─ Meta.cs
-            └─ Receita.cs
-            └─ Usuario.cs
-          ├─PoupAi  
-            ├─ Controllers/
-            │   ├─ CategoriaController.cs
-            │   └─ DashboardController.cs 
-            │   └─ DespesardController.cs 
-            │   └─ MetaController.cs
-            │   └─ ReceitaController.cs 
-            │   └─ SaldoController.cs 
-            │   └─ TransacaoController.cs 
-            │   └─ UsuarioController.cs 
-            ├─ Repositories/
-            │   └─ CategoriaRepository.cs
-            │   └─ DashboardRepository.cs
-            │   └─ DespesaRepository.cs
-            │   └─ MetaRepository.cs
-            │   └─ ReceitaRepository.cs
-            │   └─ TransacaoRepository.cs
-            │   └─ UsuarioRepository.cs
-            ├─ Services/
-              └─ SaldoService.cs
-            ├─ appsettings.json
-            └─ Program.cs
-
-
 ⚙️ Pré-requisitos
 
 Node.js LTS (18+)

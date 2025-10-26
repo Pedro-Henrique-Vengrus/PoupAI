@@ -45,5 +45,13 @@ namespace PoupAI.Repositories
             using var conn = new NpgsqlConnection(_connectionString);
             await conn.ExecuteAsync("DELETE FROM Receita WHERE Id = @Id", new { Id = id });
         }
+
+        public async Task<IEnumerable<Receita>> GetByUsuario(int usuarioId)
+{
+    using var conn = new NpgsqlConnection(_connectionString);
+    var sql = "SELECT * FROM Receita WHERE UsuarioId = @UsuarioId ORDER BY Data DESC, Id DESC";
+    return await conn.QueryAsync<Receita>(sql, new { UsuarioId = usuarioId });
+}
+
     }
 }

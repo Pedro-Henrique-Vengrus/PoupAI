@@ -60,5 +60,13 @@ namespace PoupAI.Controllers
             await _repo.DeleteValue(id);
             return NoContent();
         }
+
+        [HttpGet("usuario/{usuarioId:int}")]
+public async Task<IActionResult> GetByUsuario(int usuarioId)
+{
+    var receitas = await _repo.GetByUsuario(usuarioId);
+    return Ok(receitas);
+}
+
     }
 }

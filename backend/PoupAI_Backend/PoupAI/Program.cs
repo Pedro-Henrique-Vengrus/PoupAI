@@ -39,6 +39,11 @@ namespace PoupAI
             builder.Services.AddScoped<TransacaoRepository>(_ => new TransacaoRepository(connectionString));
             builder.Services.AddScoped<SaldoService>(_ => new SaldoService(connectionString));
 
+            // Garante a 8080 no container
+            builder.WebHost
+                .UseKestrel()
+                .UseUrls("http://0.0.0.0:8080");
+
             var app = builder.Build();
 
             app.UseSwagger();
@@ -54,6 +59,8 @@ namespace PoupAI
             app.Urls.Add("http://0.0.0.0:5177");
 
             app.Run();
+
+            app.MapGet("/healthz", () => Results.Ok("ok"));
         }
     }
 }

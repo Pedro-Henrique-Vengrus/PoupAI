@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://136.248.122.142:5177",
+  baseURL: "https://philosophical-max-poupaai-f5b2f021.koyeb.app",
   timeout: 10000,
 });
 

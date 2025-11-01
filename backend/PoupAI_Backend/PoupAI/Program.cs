@@ -9,14 +9,6 @@ namespace PoupAI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            var builder = WebApplication.CreateBuilder(args);
-
-            // força a porta 8080 no container
-            builder.WebHost
-                .UseKestrel()
-                .UseUrls("http://0.0.0.0:8080");
-
-
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -46,6 +38,11 @@ namespace PoupAI
             builder.Services.AddScoped<DashboardRepository>(_ => new DashboardRepository(connectionString));
             builder.Services.AddScoped<TransacaoRepository>(_ => new TransacaoRepository(connectionString));
             builder.Services.AddScoped<SaldoService>(_ => new SaldoService(connectionString));
+
+            // Garante a 8080 no container
+            builder.WebHost
+                .UseKestrel()
+                .UseUrls("http://0.0.0.0:8080");
 
             var app = builder.Build();
 

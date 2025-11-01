@@ -11,4 +11,5 @@ WORKDIR /app
 COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS=http://0.0.0.0:8080
 EXPOSE 8080
+# se der erro, troque para PoupAi.dll (note o "i") — Linux diferencia maiúsc/minúsc
 ENTRYPOINT ["dotnet","PoupAI.dll","--urls","http://0.0.0.0:8080"]

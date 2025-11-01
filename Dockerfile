@@ -4,8 +4,8 @@ WORKDIR /src
 # copia tudo (evita erro de caminho relativo)
 COPY . .
 # restaura e publica APONTANDO para o .csproj exato do backend
-RUN dotnet restore backend/PoupAi_Backend/PoupAI/PoupAI.csproj
-RUN dotnet publish backend/PoupAi_Backend/PoupAI/PoupAI.csproj -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet restore backend/PoupAI_Backend/PoupAI/PoupAI.csproj
+RUN dotnet publish backend/PoupAI_Backend/PoupAI/PoupAI.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 # ---------------- runtime ----------------
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
